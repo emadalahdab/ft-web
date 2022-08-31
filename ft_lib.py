@@ -75,17 +75,17 @@ def send(type_str, request):
 
 def send_text(txt):
     filename = _write_to_file(txt, 'txt', perms='w')
-    return run_cmd('./bin/send-text -h ft.noise:1337 -l 14 -O -f./fonts/6x10.bdf -i ' +
+    return run_cmd('./bin/send-text -h pi.local:1337 -g64x64+0+0 -l 14 -O -f./fonts/6x10.bdf -i ' +
                    _abs_path(filename))
 
 
 def send_image(img):
     filename = _write_to_file(img, 'img')
-    return run_cmd('./bin/send-image -h ft.noise:1337 -l 12 -t 30 -c ' +
+    return run_cmd('./bin/send-image -h pi.local:1337 -g64x64+0+0 -l 12 -t 30 -c ' +
                    _abs_path(filename))
 
 
 def send_video(vid):
     filename = _write_to_file(vid, 'vid')
-    return run_cmd('./bin/send-video -h ft.noise:1337 -l 13 ' +
+    return run_cmd('./bin/send-video -h pi.local:1337 -g64x64+0+0 -l 13 ' +
                    _abs_path(filename))
